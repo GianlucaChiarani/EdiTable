@@ -12,32 +12,32 @@ JS:
 ```
 $('#myTable td.editable').each(function () {
 	$(this).dblclick(function () {
-      var cell = $(this);
-			cell.ediTable({
-        type: cell.attr('data-type'),
-        save: {
-          endpoint: '/updateRow.php',
-          data: {
-            id: cell.attr('data-id'),
-            field: cell.attr('data-field'),
-            table: cell.attr('data-table')
-          }
-        },
-        value: {
-          endpoint: 'getValue.php',
-          data: {
-            id: cell.attr('data-id'),
-            field: cell.attr('data-field'),
-            table: cell.attr('data-table')
-          }
-        },
-        options: {
-          endpoint: '/getOptions.php',
-          data: {
-            field: cell.attr('data-field'),
-            table: cell.attr('data-table')
-          }
-			  }
+		var cell = $(this);
+		cell.ediTable({
+			type: cell.attr('data-type'),
+			save: {
+				endpoint: '/updateRow.php',
+				data: {
+					id: cell.attr('data-id'),
+					field: cell.attr('data-field'),
+					table: cell.attr('data-table')
+				}
+			},
+			value: {
+				endpoint: 'getValue.php',
+				data: {
+					id: cell.attr('data-id'),
+					field: cell.attr('data-field'),
+					table: cell.attr('data-table')
+				}
+			},
+			options: {
+				endpoint: '/getOptions.php',
+				data: {
+					field: cell.attr('data-field'),
+					table: cell.attr('data-table')
+				}			
+			}
 		});
 	});
 });
@@ -45,7 +45,7 @@ $('#myTable td.editable').each(function () {
 HTML:
 ```
 <table id="myTable">
-  <tbody>
+	<tbody>
 		<tr>
 			<td>actor</td>
 			<td class="editable">Leonardo</td>
@@ -56,7 +56,7 @@ HTML:
 			<td class="editable">Brad</td>
 			<td class="editable">Pitt</td>
 		</tr>
-  </tbody>
+	</tbody>
 </table>
 ```
 ## Options
