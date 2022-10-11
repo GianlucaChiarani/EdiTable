@@ -16,8 +16,8 @@
                 data: {}
             },
             saveOnEnter: true,
-            saveOnClick: false,
-            saveBtn: true
+            saveOnClick: true,
+            saveBtn: false
         }, options);
 
         var value = this.html();
