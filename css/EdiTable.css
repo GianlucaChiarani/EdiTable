@@ -1,0 +1,30 @@
+.et-container {
+    display: flex;
+}
+
+.et-container .et-input {
+    flex: 1;
+    border: none;
+    padding: 0px;
+    background: none;
+}
+
+.et-container .et-input:focus {
+    outline: none;
+}
+
+.et-container .et-save {
+    margin-left: 10px;
+    font-size: 18px;
+    color: green;
+    position: relative;
+    top: 1px;
+}
+
+.et-container .et-original-value {
+    display: none;
+}
+
+.et-active {
+    background: #feffc9 !important;
+}
