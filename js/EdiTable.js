@@ -1,3 +1,9 @@
+/**
+ * EdiTable (https://github.com/GianlucaChiarani/EdiTable)
+ * @version 0.1
+ * @author Gianluca Chiarani
+ * @license The MIT License (MIT)
+ */
 (function ($) {
     $.fn.ediTable = async function (options = {}) {
         var settings = $.extend({
