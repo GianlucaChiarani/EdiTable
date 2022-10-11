@@ -1,5 +1,5 @@
 # EdiTable
-A easy-to-use jQuery plugin to make table cells editable.
+An easy-to-use jQuery plugin to make table cells editable.
 
 Main features:
 - works with any html element that contains a value to be updated, such as a table cell;
