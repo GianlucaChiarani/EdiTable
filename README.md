@@ -15,8 +15,7 @@ Main features:
 <!-- if you enable the save button, you need the fontawersome library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" />
 ```
-## Example
-JS:
+## Basic usage
 ```
 $('#myTable td.editable').each(function () {
 	$(this).dblclick(function () {
@@ -25,14 +24,6 @@ $('#myTable td.editable').each(function () {
 			type: cell.attr('data-type'),
 			save: {
 				endpoint: '/updateRow.php',
-				data: {
-					id: cell.attr('data-id'),
-					field: cell.attr('data-field'),
-					table: cell.attr('data-table')
-				}
-			},
-			value: {
-				endpoint: 'getValue.php',
 				data: {
 					id: cell.attr('data-id'),
 					field: cell.attr('data-field'),
@@ -50,7 +41,6 @@ $('#myTable td.editable').each(function () {
 	});
 });
 ```
-HTML:
 ```
 <table id="myTable">
 	<tbody>
@@ -70,10 +60,10 @@ HTML:
 ## Options
 | Name  | Type | Default | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| type  | `string`  | `text` |  |
-| options  | `object`  | `{}` |  |
-| value  | `object`  | `{}` | |
-| save  | `object`  | `{}` | |
-| saveBtn  | `bool`  | `false` | |
-| saveOnEnter  | `bool`  | `true` | |
-| saveOnClick  | `bool`  | `true` | |
+| type  | `string`  | `text` | type of input to show |
+| options  | `object`  | `{}` | select options or parameters to fetch options from an endpoint |
+| value  | `object`  | `{}` | Endpoint parameters to get the initial value |
+| save  | `object`  | `{}` | save endpoint parameters |
+| saveBtn  | `bool`  | `false` | shows the save button |
+| saveOnEnter  | `bool`  | `true` | enables saving with the enter key |
+| saveOnClick  | `bool`  | `true` | enables saving with the click out of the input |
