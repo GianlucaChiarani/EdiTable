@@ -1,5 +1,5 @@
 # EdiTable
-A simple and lightweight jQuery plugin to make table cells editable.
+A easy-to-use jQuery plugin to make table cells editable.
 
 Main features:
 - works with any html element that contains a value to be updated, such as a table cell;
@@ -12,7 +12,7 @@ Main features:
 <link rel="stylesheet" href="css/EdiTable.css" />
 <script type="text/javascript" src="js/EdiTable.js"></script>
 
-<!-- if you enable the save button, you need the fontawersome library -->
+<!-- if you enable the save button, you need the fontawesome library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" />
 ```
 ## Basic usage
@@ -23,7 +23,7 @@ $('#myTable td.editable').each(function () {
 		cell.ediTable({
 			type: cell.attr('data-type'),
 			save: {
-				endpoint: '/updateRow.php',
+				endpoint: '/updateRow',
 				data: {
 					id: cell.attr('data-id'),
 					field: cell.attr('data-field'),
@@ -31,7 +31,7 @@ $('#myTable td.editable').each(function () {
 				}
 			},
 			options: {
-				endpoint: '/getOptions.php',
+				endpoint: '/getOptions',
 				data: {
 					field: cell.attr('data-field'),
 					table: cell.attr('data-table')
@@ -62,7 +62,7 @@ $('#myTable td.editable').each(function () {
 | ------------- | ------------- | ------------- | ------------- |
 | type  | `string`  | `text` | type of input to show |
 | options  | `object`  | `{}` | select options or parameters to fetch options from an endpoint |
-| value  | `object`  | `{}` | Endpoint parameters to get the initial value |
+| value  | `object`  | `{}` | endpoint parameters to get the initial value |
 | save  | `object`  | `{}` | save endpoint parameters |
 | saveBtn  | `bool`  | `false` | shows the save button |
 | saveOnEnter  | `bool`  | `true` | enables saving with the enter key |
