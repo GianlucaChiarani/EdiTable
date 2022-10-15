@@ -1,6 +1,6 @@
 /**
  * EdiTable (https://github.com/GianlucaChiarani/EdiTable)
- * @version 0.1
+ * @version 0.5
  * @author Gianluca Chiarani
  * @license The MIT License (MIT)
  */
@@ -124,9 +124,8 @@
         });
 
         function saveValue(inputEl, settings) {
-            inputEl.prop('disabled', true);
-
             settings.save.data.value = inputEl.val();
+            inputEl.prop('disabled', true);
 
             $.ajax({
                 method: settings.save.method,

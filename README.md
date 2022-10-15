@@ -12,7 +12,7 @@ Main features:
 <link rel="stylesheet" href="css/EdiTable.css" />
 <script type="text/javascript" src="js/EdiTable.js"></script>
 
-<!-- if you enable the save button, you need the fontawesome library -->
+<!-- if you enable the save button, you will need the fontawesome library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" />
 ```
 ## Basic usage
@@ -43,16 +43,23 @@ $('#myTable td.editable').each(function () {
 ```
 ```
 <table id="myTable">
+	<thead>
+		<tr>
+			<th>first name</th>
+			<th>last name</th>
+			<th>movie</th>
+		</tr>
+	</thead>
 	<tbody>
 		<tr>
 			<td class="editable" data-id="1" data-field="first_name" data-table="actors" data-type="text">Leonardo</td>
 			<td class="editable" data-id="1" data-field="last_name" data-table="actors" data-type="text">Di Caprio</td>
-			<td class="editable" data-id="1" data-field="film" data-table="actors" data-type="select">Titanic</td>
+			<td class="editable" data-id="1" data-field="movie" data-table="actors" data-type="select">Titanic</td>
 		</tr>
 		<tr>
 			<td class="editable" data-id="2" data-field="first_name" data-table="actors" data-type="text">Brad</td>
 			<td class="editable" data-id="2" data-field="last_name" data-table="actors" data-type="text">Pitt</td>
-			<td class="editable" data-id="2" data-field="film" data-table="actors" data-type="select">Fight Club</td>
+			<td class="editable" data-id="2" data-field="movie" data-table="actors" data-type="select">Fight Club</td>
 		</tr>
 	</tbody>
 </table>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../src/css/EdiTable.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+    <script src="../src/js/EdiTable.js"></script>
+    
+</head>
+<body>
+    <table class="table" id="myTable">
+        <thead>
+            <tr>
+                <th>first name</th>
+                <th>last name</th>
+                <th>movie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="editable" data-id="1" data-field="first_name" data-table="actors" data-type="text">Leonardo</td>
+                <td class="editable" data-id="1" data-field="last_name" data-table="actors" data-type="text">Di Caprio</td>
+                <td class="editable" data-id="1" data-field="movie" data-table="actors" data-type="select">Titanic</td>
+            </tr>
+            <tr>
+                <td class="editable" data-id="2" data-field="first_name" data-table="actors" data-type="text">Brad</td>
+                <td class="editable" data-id="2" data-field="last_name" data-table="actors" data-type="text">Pitt</td>
+                <td class="editable" data-id="2" data-field="movie" data-table="actors" data-type="select">Fight Club</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        $('#myTable td.editable').each(function () {
+                $(this).dblclick(function () {
+                    var cell = $(this);
+                    cell.ediTable({
+                        type: cell.attr('data-type'),
+                        save: {
+                            endpoint: 'https://www.gianlucachiarani.it/projects/plugins/EdiTable/demo/updateRow.php',
+                            data: {
+                                id: cell.attr('data-id'),
+                                field: cell.attr('data-field'),
+                                table: cell.attr('data-table')
+                            }
+                        },
+                        options: {
+                            endpoint: 'https://www.gianlucachiarani.it/projects/plugins/EdiTable/demo/getOptions.php',
+                            data: {
+                                field: cell.attr('data-field'),
+                                table: cell.attr('data-table')
+                            }
+                        }
+                    });
+                });
+            });
+    </script>
+</body>
+</html>
